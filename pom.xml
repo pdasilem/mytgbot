@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>ru.pdasilem</groupId>
 	<artifactId>mytb</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.3.0-SNAPSHOT</version>
 	<name>mytb</name>
 	<description>tg bot for jr</description>
 	<properties>
@@ -28,6 +28,11 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
 		<dependency>
 			<groupId>org.telegram</groupId>
 			<artifactId>telegrambots-spring-boot-starter</artifactId>
