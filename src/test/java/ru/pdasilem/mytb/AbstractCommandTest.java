@@ -10,11 +10,13 @@ import ru.pdasilem.mytb.bot.JavarushTelegramBot;
 import ru.pdasilem.mytb.command.Command;
 import ru.pdasilem.mytb.service.SendBotMessageService;
 import ru.pdasilem.mytb.service.SendBotMessageServiceImpl;
+import ru.pdasilem.mytb.service.TelegramUserService;
 
 abstract class AbstractCommandTest {
 
     protected JavarushTelegramBot javarushTelegramBot = Mockito.mock(JavarushTelegramBot.class);
     protected SendBotMessageService sendBotMessageService = new SendBotMessageServiceImpl(javarushTelegramBot);
+    protected TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
 
     abstract String getCommandName();
     abstract String getCommandMessage();

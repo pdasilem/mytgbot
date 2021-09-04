@@ -10,6 +10,7 @@ import ru.pdasilem.mytb.command.CommandContainer;
 import ru.pdasilem.mytb.command.CommandName;
 import ru.pdasilem.mytb.command.UnknownCommand;
 import ru.pdasilem.mytb.service.SendBotMessageService;
+import ru.pdasilem.mytb.service.TelegramUserService;
 
 import java.util.Arrays;
 
@@ -21,7 +22,8 @@ public class CommandContainerTest {
     @BeforeEach
     public void init(){
         SendBotMessageService sendBotMessageService = Mockito.mock(SendBotMessageService.class);
-        commandContainer = new CommandContainer(sendBotMessageService);
+        TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
+        commandContainer = new CommandContainer(sendBotMessageService, telegramUserService);
     }
 
     @Test
