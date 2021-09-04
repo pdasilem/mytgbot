@@ -13,9 +13,16 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
+    - name: Set up PostgreSQL
+      uses: harmon758/postgresql-action@v1
+      with:
+        postgresql version: '11'
+        postgresql database: 'mtb_db'
+        postgresql root password: 'root'
+        postgresql user: 'mtb_db_user'
+        postgresql password: 'mtb_db_password'
     - name: Set up JDK 1.11
       uses: actions/setup-java@v1
       with:
